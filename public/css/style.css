@@ -58,7 +58,7 @@ li{
   font-weight: normal;
   padding-right: 25px;
   font-size:0.8em;
-  display:none; 
+  /* display:none;  */
 }
 
 
@@ -72,3 +72,29 @@ li{
     left:220px;
 }
 /* FIN HEADER*/
+/*FOOTER*/
+.footer{
+    background-color: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer,.legalite{
+    font-size:1.5em;
+    display:flex;
+    justify-content: space-between;
+}
+.legalite{
+    font-size:1.5em;
+    display:flex;
+    justify-content: center;
+   
+}
+.mention,.condition,.accessibilite
+{
+    margin-right:25px;
+}
+.trait-union
+{
+    margin-right:15px;
+}
+/*FIN FOOTER*/
