@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-       <link rel="stylesheet" href="{{asset('bootstrap-5.0.2-dist/css/bootstrap.css')}}">
+        <title>{% block title %}Gironde Énergies{% endblock %}</title>
+       {# <link rel="stylesheet" href="{{asset('bootstrap-5.0.2-dist/css/bootstrap.css')}}"> #}
        <link rel ="stylesheet" href="{{asset('css/style.css')}}">
         {% block stylesheets %}
         {% endblock %}
@@ -14,5 +14,6 @@
     <body>
    {% include "_partials/_header.html.twig" %}
         {% block body %}{% endblock %}
+    {% include "_partials/_footer.html.twig"%}
     </body>
 </html>
