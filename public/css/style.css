@@ -28,6 +28,7 @@ a{
 }
 li{
     list-style-type: none;
+   
 }
 /*FIN GENERAL*/
 /* HEADER*/
@@ -48,7 +49,7 @@ li{
     font-size:1.2em; 
     display: flex;
     justify-content: space-around;
-    position:fixed;
+    position:relative;
     top:-25px;
     right:100px;  
     z-index:99;      
@@ -64,14 +65,62 @@ li{
   font-size:0.8em;
 }
 .menu-presentation,.menu-activites,.menu-photovoltaiques{
-   display:none;
+     display:none;  
+     text-align:center;
 }
+
 .menu li:hover .menu-presentation,.menu li:hover .menu-activites,.menu-activites li:hover .menu-photovoltaiques
 {
     display:block;
     background: white ;
+    padding:10px;
+  
    
 }
+.menu li:hover .menu-presentation{
+    width:250px;
+    
+}
+.menu li:hover .menu-activites{
+    width:150px;
+    
+}
+.menu-activites li:hover .menu-photovoltaiques{
+    width:210px;
+}
+.menu-presentation{
+    position:absolute;
+    top:80px;
+    left:-15px;
+    
+}
+.menu-activites{
+    position:absolute;
+    top:80px;
+    left:430px;
+    width:100px;
+}
+.menu-photovoltaiques{
+    position:absolute;
+    top:0px;
+    left:145px;
+    
+}
+ li .menu-dropdown::after{
+    content:"";
+    display:block;
+    position:relative;
+    line-height: 5px;
+    margin:0 auto;
+    height:2px;
+    width:0%;
+    transition: width 0.2s ease-in-out;
+ }
+ li .menu-dropdown:hover::after{
+    width:90%;
+    background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    
+ }
 
 
 .trait{
@@ -84,6 +133,13 @@ li{
     left:220px;
 }
 /* FIN HEADER*/
+/*BODY DE L'ACCUEIL*/
+.content{
+    flex-grow:1;
+}
+
+
+/*FIN BODY DE L'ACCUEIL*/
 /*FOOTER*/
 .footer{
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
