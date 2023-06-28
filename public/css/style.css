@@ -23,11 +23,10 @@ img{
  
 a{
     text-decoration:none;
-    background: #ef8031;
-    color: white; 
+    color:var(--text-color); 
 }
 a:hover{
-    background:#f9c12e;
+    color:var(--text-color)
 }
 li{
     list-style-type: none;
