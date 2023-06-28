@@ -15,7 +15,7 @@ class Menu
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 20, nullable: true)]
+    #[ORM\Column(length: 63, nullable: true)]
     private ?string $menu = null;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'menus')]
@@ -33,7 +33,6 @@ class Menu
         $this->pages = new ArrayCollection();
     }
 
-    
     public function getId(): ?int
     {
         return $this->id;
@@ -122,6 +121,4 @@ class Menu
 
         return $this;
     }
-
-   
 }

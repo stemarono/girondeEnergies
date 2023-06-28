@@ -17,7 +17,7 @@ class Page
     #[ORM\Column(length: 63, nullable: true)]
     private ?string $titre = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $contenu = null;
 
     #[ORM\Column(length: 255,unique:true)]
@@ -31,10 +31,6 @@ class Page
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateModification = null;
-
-    #[ORM\ManyToOne(inversedBy: 'pages')]
-    private ?Menu $menu = null;
-
 
     public function getId(): ?int
     {
@@ -58,7 +54,7 @@ class Page
         return $this->contenu;
     }
 
-    public function setContenu(?string $contenu): static
+    public function setContenu(string $contenu): static
     {
         $this->contenu = $contenu;
 
@@ -112,18 +108,4 @@ class Page
 
         return $this;
     }
-
-    public function getMenu(): ?Menu
-    {
-        return $this->menu;
-    }
-
-    public function setMenu(?Menu $menu): static
-    {
-        $this->menu = $menu;
-
-        return $this;
-    }
-
-    
 }
