@@ -13,6 +13,7 @@
 }
 html, body{
     height:100%;
+    /* position:relative; */
 }
 
 img{
@@ -22,9 +23,11 @@ img{
  
 a{
     text-decoration:none;
-    color: var(--text-color);
-    
-  
+    background: #ef8031;
+    color: white; 
+}
+a:hover{
+    background:#f9c12e;
 }
 li{
     list-style-type: none;
@@ -38,15 +41,17 @@ li{
    justify-content: space-between;    
 }
 .logo{
-    max-width: 200px;
+    max-width: 220px;
 }
 .logo-card{
     width:100%;
-    margin-left:10px;
+    position:relative;
+    top:0px;
+    left:-305px;
 }
 .menu{
     font-family:'Poppins';
-    font-size:1.2em; 
+    font-size:1.4em; 
     display: flex;
     justify-content: space-around;
     position:relative;
@@ -56,13 +61,16 @@ li{
 }
 
 .menu-item{
-    padding:50px;
+    padding:40px;
   
+}
+.submenu-item{
+    padding-bottom: 20px;
 }
 .menu-dropdown,.submenu-item{
   font-weight: normal;
-  padding-right: 25px;
-  font-size:0.8em;
+  padding-right: 15px;
+   font-size:1em; 
 }
 .menu-presentation,.menu-activites,.menu-photovoltaiques{
      display:none;  
@@ -73,20 +81,18 @@ li{
 {
     display:block;
     background: white ;
-    padding:10px;
-  
-   
+    padding:5px; 
 }
+
 .menu li:hover .menu-presentation{
-    width:250px;
-    
+    width:320px;    
 }
 .menu li:hover .menu-activites{
-    width:150px;
-    
+    width:220px;    
 }
 .menu-activites li:hover .menu-photovoltaiques{
-    width:210px;
+    width:300px;
+    height:100px;  
 }
 .menu-presentation{
     position:absolute;
@@ -103,10 +109,15 @@ li{
 .menu-photovoltaiques{
     position:absolute;
     top:0px;
-    left:145px;
+    left:220px;
     
 }
- li .menu-dropdown::after{
+.submenu-photovoltaique{
+    padding-bottom: 15px;
+}
+
+/*pour avoir le soulignement sous les sous-menu*/
+ li .menu-dropdown::after,li .menu-photovoltaiques::after{
     content:"";
     display:block;
     position:relative;
@@ -116,10 +127,11 @@ li{
     width:0%;
     transition: width 0.2s ease-in-out;
  }
- li .menu-dropdown:hover::after{
-    width:90%;
+
+ li .menu-dropdown:hover::after, li .menu-photovoltaiques:hover::after{
+    width:100%;
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
-    
+   
  }
 
 
@@ -129,17 +141,86 @@ li{
     border-image-slice:5;
     width:100%;
     position:absolute;
-    top:85px;
-    left:220px;
+    top:100px;
+    left:250px;
 }
 /* FIN HEADER*/
 /*BODY DE L'ACCUEIL*/
+
+/* pour avoir le footer bien en bas de la page*/
 .content{
     flex-grow:1;
 }
+/*image du carousel*/
+.c-item{
+    height: 800px;
+}
+.img-carousel{
+    height: 75%;
+    object-fit: cover;
 
+}
+
+/*les actualités*/
+
+.actualite{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-actu{
+    width:450px;
+    text-align: justify;
+   
+}
+.photo{
+    text-align: center;
+}
+.card-photo{
+    width:70%;  
+}
+.card-body{
+    padding-top: 30px;
+}
+.card-body h3,.card-body p,.btn-suite{
+    padding-top:15px;
+}
+.card-body p{
+    font-size: 1.2em;
+}
+
+.btn-suite{
+    border-radius: 5px;
+    font-size:1.4em;
+    padding:5px;
+    background: #ef8031;
+    border:none;
+    color:white;
+    font-weight: bold;
+    float:right;
+}
+
+/*mise en place de la video*/
+
+.video{
+    margin:150px 0;
+    text-align: center;
+}
 
 /*FIN BODY DE L'ACCUEIL*/
+/* QUI SOMMES-NOUS */
+
+.history{
+    max-width:550px;
+}
+.photo{
+width:100%;
+   position:relative;
+   top:15px;
+   left:100px;
+}
+
+/*FIN QUI SOMMES-NOUS*/
 /*FOOTER*/
 .footer{
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);

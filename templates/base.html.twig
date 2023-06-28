@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Gironde Énergies{% endblock %}</title>
+        <link rel="icone" href="{{asset('image/logo-gironde-energies.jpg')}}">
        <link rel="stylesheet" href="{{asset('bootstrap-5.0.2-dist/css/bootstrap.css')}}"> 
        <link rel ="stylesheet" href="{{asset('css/style.css')}}">
         {% block stylesheets %}
@@ -14,6 +15,7 @@
     <body>
    {% include "_partials/_header.html.twig" %}
         {% block body %}{% endblock %}
-    {% include "_partials/_footer.html.twig"%}
+    {% include "_partials/_footer.html.twig"%}>
+    <script src="{{asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.js')}}"></script
     </body>
 </html>

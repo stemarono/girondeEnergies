@@ -3,21 +3,46 @@
 {% block title %}Gironde Énergies{% endblock %}
 
 {% block body %}
-<div class="content">
-    <div>
-        <div  class="carousel slide" data-bs-ride="carousel">
+
+        <div id="carousel-slide" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('image/Rauzan-drone.jpg')}}" class="d-block w-100" alt="parc photovoltaïque" >
+                <div class="carousel-item active c-item">
+                    <img  src="{{asset('image/Rauzan-drone1.jpg')}}" class="d-block w-100 img-carousel" alt="parc photovoltaïque" >
                 </div>
-                <div class="carousel-item">
-                    <img src="{{asset('image/villegouge-drone.jpg')}}" class="d-block w-100" alt="panneaux photovoltaïques au-dessus d'un boulodrome" >
+                <div class="carousel-item c-item">
+                    <img src="{{asset('image/villegouge-drone1.jpg')}}" class="d-block w-100 img-carousel" alt="panneaux photovoltaïques au-dessus d'un boulodrome" >
                 </div>
-                <div class="carousel-item">
-                    <img src="{{asset('image/marcheprime-drone.jpg')}}" class="d-block w-100" alt="ombrières de parking" >
+                <div class="carousel-item c-item">
+                    <img  src="{{asset('image/marcheprime-drone1.jpg')}}" class="d-block w-100 img-carousel" alt="ombrières de parking" >
                 </div>
             </div>
         </div>
-    <div>
-</div>    
+        <div class="actualite">
+            <div class="card-actu">
+                <div class="photo">
+                    <img src="{{asset('image/temob-actualite.jpg')}}" alt="logo de temob" class="card-photo">
+                </div>
+                <div class="card-body">
+                    <h5>le </h5>
+                    <h3>Assemblée de la transition énergétique</h3>
+                    <p>Rendez-vous pour la signature de la charte d'engagement du réseau Néo-Aquitain de stations d'avitaillement multiénergies locales et 100 % renouvelables....</p>
+                    <button type="submit" class="btn-suite">Lire la suite</button>
+                </div>
+            </div>
+            <div class="card-actu ">
+                <div class="photo">
+                    <img src="{{asset('image/forum-actualite.jpg')}}" alt="logo du forum" class="card-photo">
+                </div>
+                <div class="card-body">
+                    <h5>le </h5>
+                    <h3>Forum des énergies du 11 Mai 2023</h3>
+                    <p>Vous êtes élu(e) ou agent de collectivité, inscrivez-vous au Forum des Energies, qui se tiendra sur notre site le 11 mai 2023. Toutes les communes et intercommunalités de Gironde ainsi que les partenaires institutionnels sont invités. Les enjeux énergétiques sont aujourd'hui la principale préoccupation des collectivités : hausse du coût de l’énergie, réchauffement climatique... </p>
+                    <button type="submit" class="btn-suite">Lire la suite</button>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <iframe width="660" height="415" src="https://www.youtube.com/embed/XJiELv27qz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+            
 {% endblock %}
