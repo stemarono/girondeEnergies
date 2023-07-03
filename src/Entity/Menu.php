@@ -27,10 +27,16 @@ class Menu
     #[ORM\OneToMany(mappedBy: 'menu', targetEntity: Page::class)]
     private Collection $pages;
 
+   
+
+ 
+
     public function __construct()
     {
         $this->menus = new ArrayCollection();
         $this->pages = new ArrayCollection();
+      
+      
     }
 
     public function getId(): ?int
@@ -121,4 +127,10 @@ class Menu
 
         return $this;
     }
+
+   function __toString()
+   {
+    return $this->menu;
+   }
+  
 }
