@@ -21,11 +21,11 @@ class PrecommandeCrudController extends AbstractCrudController
     {
         return [
            
-            TextField::new('nomStructure'),
-            TextField::new('nomDemandeur'),
-            TextField::new('prenomDemandeur'),
-            EmailField::new('EmailDemandeur'),
-            TelephoneField::new('telephoneDemandeur'),
+            TextField::new('nomStructure','nom de la structure'),
+            TextField::new('nomDemandeur', 'nom du demandeur'),
+            TextField::new('prenomDemandeur', 'prénom du demandeur'),
+            EmailField::new('EmailDemandeur','email du demandeur'),
+            TelephoneField::new('telephoneDemandeur', 'telephone du demandeur' ),
             TextField::new('localisation'),
             TextEditorField::new('description'),
         ];

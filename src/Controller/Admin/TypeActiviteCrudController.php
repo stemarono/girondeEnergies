@@ -20,10 +20,10 @@ class TypeActiviteCrudController extends AbstractCrudController
     {
         return [
             
-            TextField::new('typeActivite'),
-            TextEditorField::new('descriptionTypeActivite'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            TextField::new('typeActivite','Type d\'activité'),
+            TextEditorField::new('descriptionTypeActivite', 'description de l\'activité'),
+            DateTimeField::new('dateCreation','date de la création'),
+            DateTimeField::new('dateModification','date de la modification'),
         ];
     }
     

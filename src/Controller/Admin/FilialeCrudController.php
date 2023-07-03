@@ -22,12 +22,12 @@ class FilialeCrudController extends AbstractCrudController
     {
         return [
            
-            TextField::new('nomFiliale'),
+            TextField::new('nomFiliale', 'nom de la filiale'),
             TextEditorField::new('description'),
             UrlField::new('logo'),
-            PercentField::new('partCapital'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            PercentField::new('partCapital', 'part du capital'),
+            DateTimeField::new('dateCreation','date de la création'),
+            DateTimeField::new('dateModification', 'date de la modification'),
         ];
     }
     

@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Menu;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class MenuCrudController extends AbstractCrudController
@@ -19,7 +20,7 @@ class MenuCrudController extends AbstractCrudController
         return [
             
             TextField::new('menu'),
-            TextField::new('parent'),
+            textField::new('parent'),
 
            
         ];

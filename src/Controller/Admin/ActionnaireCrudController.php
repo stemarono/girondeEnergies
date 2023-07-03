@@ -19,9 +19,9 @@ class ActionnaireCrudController extends AbstractCrudController
     {
         return [
            
-            TextField::new('nomStructure'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            TextField::new('nomStructure', 'nom de la structure'),
+            DateTimeField::new('dateCreation','date de création'),
+            DateTimeField::new('dateModification','date de modification'),
         ];
     }
     

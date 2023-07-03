@@ -20,8 +20,8 @@ class RapportActiviteCrudController extends AbstractCrudController
         return [
            
             TextField::new('rapport'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            DateTimeField::new('dateCreation','date de création'),
+            DateTimeField::new('dateModification','date de la modification'),
         ];
     }
     

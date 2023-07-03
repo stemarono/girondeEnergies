@@ -25,10 +25,10 @@ class PageCrudController extends AbstractCrudController
             TextField::new('titre'),
             TextEditorField::new('contenu'),
             SlugField::new('slug')->setTargetFieldName('slug'),
-            AssociationField::new('menu'),
-            DateTimeField::new('datePublication'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            AssociationField::new('menu')->autocomplete(),
+            DateTimeField::new('datePublication','date de la publication'),
+            DateTimeField::new('dateCreation','date de la création'),
+            DateTimeField::new('dateModification','date de la modification'),
         ];
     }
     

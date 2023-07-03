@@ -23,14 +23,14 @@ class ActiviteCrudController extends AbstractCrudController
     {
         return [
             
-            TextField::new('titreRealisation'),
+            TextField::new('titreRealisation', 'titre de la réalisation'),
             TextEditorField::new('description'),
-            BooleanField::new('enProjet'),
-            integerField::new('typeActivite'),
-            integerField::new('commune'),
+            BooleanField::new('enProjet', 'en projet'),
+            integerField::new('typeActivite', 'type d\'activité'),
+            integerField::new('commune','nom de la commune'),
             UrlField::new('imageUrl'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            DateTimeField::new('dateCreation', 'date de création'),
+            DateTimeField::new('dateModification','date de modification'),
         ];
     }
     

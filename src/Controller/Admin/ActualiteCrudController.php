@@ -20,12 +20,12 @@ class ActualiteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('titreActualite'),
-            DateTimeField::new('dateActualite'),
+            TextField::new('titreActualite','titre de l\'actualité'),
+            DateTimeField::new('dateActualite','date de l\'actualité'),
             TextEditorField::new('description'),
             UrlField::new('imageUrl'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            DateTimeField::new('dateCreation','date de la Création'),
+            DateTimeField::new('dateModification','date de la modification'),
         ];
     }
     

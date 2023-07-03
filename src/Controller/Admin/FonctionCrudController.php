@@ -20,8 +20,8 @@ class FonctionCrudController extends AbstractCrudController
         return [
            
             TextField::new('fonction'),
-            DateTimeField::new('dateCreation'),
-            DateTimeField::new('dateModification'),
+            DateTimeField::new('dateCreation','date de la création'),
+            DateTimeField::new('dateModification', 'date de la modification'),
             
            
         ];
