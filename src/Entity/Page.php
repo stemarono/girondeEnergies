@@ -32,6 +32,11 @@ class Page
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateModification = null;
 
+    #[ORM\ManyToOne(inversedBy: 'pages')]
+    private ?Menu $menu = null;
+
+   
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,4 +113,17 @@ class Page
 
         return $this;
     }
+
+    public function getMenu(): ?Menu
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?Menu $menu): static
+    {
+        $this->menu = $menu;
+
+        return $this;
+    }
+
 }
