@@ -42,6 +42,12 @@ class Precommande
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateModification = null;
 
+    #[ORM\ManyToOne(inversedBy: 'precommandes')]
+    private ?Commune $commune = null;
+
+    #[ORM\ManyToOne(inversedBy: 'precommandes')]
+    private ?TypeActivite $typeActivite = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -151,6 +157,30 @@ class Precommande
     public function setDateModification(\DateTimeInterface $dateModification): static
     {
         $this->dateModification = $dateModification;
+
+        return $this;
+    }
+
+    public function getCommune(): ?Commune
+    {
+        return $this->commune;
+    }
+
+    public function setCommune(?Commune $commune): static
+    {
+        $this->commune = $commune;
+
+        return $this;
+    }
+
+    public function getTypeActivite(): ?TypeActivite
+    {
+        return $this->typeActivite;
+    }
+
+    public function setTypeActivite(?TypeActivite $typeActivite): static
+    {
+        $this->typeActivite = $typeActivite;
 
         return $this;
     }

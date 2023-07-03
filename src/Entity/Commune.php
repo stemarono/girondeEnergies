@@ -28,9 +28,13 @@ class Commune
     #[ORM\OneToMany(mappedBy: 'commune', targetEntity: Activite::class)]
     private Collection $activites;
 
+    #[ORM\OneToMany(mappedBy: 'commune', targetEntity: Precommande::class)]
+    private Collection $precommandes;
+
     public function __construct()
     {
         $this->activites = new ArrayCollection();
+        $this->precommandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -98,6 +102,36 @@ class Commune
             // set the owning side to null (unless already changed)
             if ($activite->getCommune() === $this) {
                 $activite->setCommune(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Precommande>
+     */
+    public function getPrecommandes(): Collection
+    {
+        return $this->precommandes;
+    }
+
+    public function addPrecommande(Precommande $precommande): static
+    {
+        if (!$this->precommandes->contains($precommande)) {
+            $this->precommandes->add($precommande);
+            $precommande->setCommune($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrecommande(Precommande $precommande): static
+    {
+        if ($this->precommandes->removeElement($precommande)) {
+            // set the owning side to null (unless already changed)
+            if ($precommande->getCommune() === $this) {
+                $precommande->setCommune(null);
             }
         }
 
