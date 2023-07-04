@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Menu;
 use App\Form\MenuType;
 use App\Repository\MenuRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,16 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/menu')]
 class MenuController extends AbstractController
 {
+    // #[Route('/affichage',name:'app_menu_affichage')]
+    // public function affichage(EntityManagerInterface $em){
+    //     $menus=$em->getRepository(Menu::class)->findBy([],['id'=>'asc']);
+    //     $parent=null;
+    //     $niveau=0;
+    //     $html=$this->afficher_menu($em,$parent,$menus,$niveau);
+    //     return $this->render("menu/affichage.html.twig",["html"=>$html]);
+
+    // }
+
     #[Route('/', name: 'app_menu_index', methods: ['GET'])]
     public function index(MenuRepository $menuRepository): Response
     {
@@ -34,7 +45,7 @@ class MenuController extends AbstractController
             return $this->redirectToRoute('app_menu_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('menu/new.html.twig', [
+        return $this->render('menu/new.html.twig', [
             'menu' => $menu,
             'form' => $form,
         ]);
@@ -60,7 +71,7 @@ class MenuController extends AbstractController
             return $this->redirectToRoute('app_menu_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('menu/edit.html.twig', [
+        return $this->render('menu/edit.html.twig', [
             'menu' => $menu,
             'form' => $form,
         ]);

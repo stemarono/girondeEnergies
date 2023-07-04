@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Precommande index{% endblock %}
+
+{% block body %}
+    <h1>Precommande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomStructure</th>
+                <th>NomDemandeur</th>
+                <th>PrenomDemandeur</th>
+                <th>EmailDemandeur</th>
+                <th>TelephoneDemandeur</th>
+                <th>Description</th>
+                <th>Localisation</th>
+                <th>DateCreation</th>
+                <th>DateModification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for precommande in precommandes %}
+            <tr>
+                <td>{{ precommande.id }}</td>
+                <td>{{ precommande.nomStructure }}</td>
+                <td>{{ precommande.nomDemandeur }}</td>
+                <td>{{ precommande.prenomDemandeur }}</td>
+                <td>{{ precommande.emailDemandeur }}</td>
+                <td>{{ precommande.telephoneDemandeur }}</td>
+                <td>{{ precommande.description }}</td>
+                <td>{{ precommande.localisation }}</td>
+                <td>{{ precommande.dateCreation ? precommande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ precommande.dateModification ? precommande.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_projet_show', {'id': precommande.id}) }}">show</a>
+                    <a href="{{ path('app_projet_edit', {'id': precommande.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_projet_new') }}">Create new</a>
+{% endblock %}

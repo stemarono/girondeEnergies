@@ -46,16 +46,15 @@ li{
     width:100%;
     position:relative;
     top:0px;
-    left:-305px;
+    left:-85px;
 }
 .menu{
     font-family:'Poppins';
-    font-size:1.4em; 
+    font-size:1.2em; 
     display: flex;
     justify-content: space-around;
     position:relative;
-    top:-25px;
-    right:100px;  
+    top:0px;
     z-index:99;      
 }
 
@@ -79,7 +78,8 @@ li{
 .menu li:hover .menu-presentation,.menu li:hover .menu-activites,.menu-activites li:hover .menu-photovoltaiques
 {
     display:block;
-    background: white ;
+    background:#fff;
+    color:#3f4f59;
     padding:5px; 
 }
 
@@ -114,9 +114,16 @@ li{
 .submenu-photovoltaique{
     padding-bottom: 15px;
 }
+li.menu-dropdown,li .submenu-item{
+    display:block;
+}
+li .menu-dropdown:hover, li .submenu-item:hover{
+    background-color: #3f4f59;
+    color:#f9ae2f;
+}
 
 /*pour avoir le soulignement sous les sous-menu*/
- li .menu-dropdown::after,li .menu-photovoltaiques::after{
+ /* li .menu-dropdown::after,li .menu-photovoltaiques::after{
     content:"";
     display:block;
     position:relative;
@@ -131,7 +138,7 @@ li{
     width:100%;
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
    
- }
+ } */
 
 
 .trait{
@@ -159,6 +166,37 @@ li{
     object-fit: cover;
 
 }
+/*FIN BODY DE L'ACCUEIL*/
+
+/* PRESENTATION*/
+.title{
+    text-align: center;
+    margin: 50px 0px;
+}
+.contenu{
+   margin: 50px;
+}
+.about-card{
+   display:flex;
+   justify-content: space-around;
+}
+.photo{
+max-width:500px;
+/* display:inline-block;
+vertical-align: top; */
+}
+.photo-sdeeg{
+    width:100%;
+}
+.paragraph{
+    display:inline-block;
+    margin-top:25px;
+    margin-left:120px; 
+    text-align: justify;
+    width:100vw; 
+}
+ 
+/*FIN PRESENTATION*/
 
 /*les actualités*/
 
