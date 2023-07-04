@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Precommande{% endblock %}
+
+{% block body %}
+    <h1>Precommande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ precommande.id }}</td>
+            </tr>
+            <tr>
+                <th>NomStructure</th>
+                <td>{{ precommande.nomStructure }}</td>
+            </tr>
+            <tr>
+                <th>NomDemandeur</th>
+                <td>{{ precommande.nomDemandeur }}</td>
+            </tr>
+            <tr>
+                <th>PrenomDemandeur</th>
+                <td>{{ precommande.prenomDemandeur }}</td>
+            </tr>
+            <tr>
+                <th>EmailDemandeur</th>
+                <td>{{ precommande.emailDemandeur }}</td>
+            </tr>
+            <tr>
+                <th>TelephoneDemandeur</th>
+                <td>{{ precommande.telephoneDemandeur }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ precommande.description }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ precommande.localisation }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ precommande.dateCreation ? precommande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateModification</th>
+                <td>{{ precommande.dateModification ? precommande.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_projet_index') }}">back to list</a>
+
+    <a href="{{ path('app_projet_edit', {'id': precommande.id}) }}">edit</a>
+
+    {{ include('projet/_delete_form.html.twig') }}
+{% endblock %}
