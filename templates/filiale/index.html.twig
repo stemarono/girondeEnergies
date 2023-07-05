@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filiale index{% endblock %}
+
+{% block body %}
+    <h1>Filiale index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomFiliale</th>
+                <th>Description</th>
+                <th>Logo</th>
+                <th>PartCapital</th>
+                <th>DateCreation</th>
+                <th>DateModification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for filiale in filiales %}
+            <tr>
+                <td>{{ filiale.id }}</td>
+                <td>{{ filiale.nomFiliale }}</td>
+                <td>{{ filiale.description }}</td>
+                <td>{{ filiale.logo }}</td>
+                <td>{{ filiale.partCapital }}</td>
+                <td>{{ filiale.dateCreation ? filiale.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ filiale.dateModification ? filiale.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_filiale_show', {'id': filiale.id}) }}">show</a>
+                    <a href="{{ path('app_filiale_edit', {'id': filiale.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filiale_new') }}">Create new</a>
+{% endblock %}

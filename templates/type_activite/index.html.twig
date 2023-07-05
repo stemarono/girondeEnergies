@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeActivite index{% endblock %}
+
+{% block body %}
+    <h1>TypeActivite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Typeactivite</th>
+                <th>DescriptionTypeActivite</th>
+                <th>DateCreation</th>
+                <th>DateModification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_activite in type_activites %}
+            <tr>
+                <td>{{ type_activite.id }}</td>
+                <td>{{ type_activite.typeactivite }}</td>
+                <td>{{ type_activite.descriptionTypeActivite }}</td>
+                <td>{{ type_activite.dateCreation ? type_activite.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ type_activite.dateModification ? type_activite.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_type_activite_show', {'id': type_activite.id}) }}">show</a>
+                    <a href="{{ path('app_type_activite_edit', {'id': type_activite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_activite_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filiale{% endblock %}
+
+{% block body %}
+    <h1>Filiale</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ filiale.id }}</td>
+            </tr>
+            <tr>
+                <th>NomFiliale</th>
+                <td>{{ filiale.nomFiliale }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ filiale.description }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ filiale.logo }}</td>
+            </tr>
+            <tr>
+                <th>PartCapital</th>
+                <td>{{ filiale.partCapital }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ filiale.dateCreation ? filiale.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateModification</th>
+                <td>{{ filiale.dateModification ? filiale.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filiale_index') }}">back to list</a>
+
+    <a href="{{ path('app_filiale_edit', {'id': filiale.id}) }}">edit</a>
+
+    {{ include('filiale/_delete_form.html.twig') }}
+{% endblock %}

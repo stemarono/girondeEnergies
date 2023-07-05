@@ -1,0 +1,90 @@
+{% extends "base.html.twig" %}
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="titre-contact">
+        <h3 class="titre-coordonnées">Nos coordonnées</h3>
+    </div>
+     <div class="trait-adresse"></div>
+   
+    <div class="d-flex ">    
+        <div class="coordonnées">
+            <div class="menu-coordonnées">
+                <div class="adresse">
+                    <div>
+                        <span>Gironde Énergies</span>
+                    </div>
+                    <div>
+                        <span>12, rue du Cardinal Richaud</span>
+                    </div>
+                    <div>
+                        <span>33300 Bordeaux</span>
+                    </div>
+                </div>
+                <div class="phone-contact">
+                    <div class="icon-phone">
+                        <img src="{{asset('image/telephone.png')}}">
+                    </div>
+                    <div class="phone">
+                        <span>: 05 56 16 10 70</span>
+                    </div>
+                </div>
+            
+                <div class="mail">
+                    <a class="adresse-mail"href="mailto:contact@gironde-energies.fr" alt="adresse mail"> contact@gironde-energies.fr</a>
+                </div>
+            </div>
+            <div class="ouverture">
+                <h4 class="horaires">Nos Horaires</h4>
+            </div>
+            <div class="trait-horaire"></div>
+            <div>
+                <span> du Lundi au Vendredi</span>
+            </div>
+            <div>
+                <span>8h30-12h00 / 13h00-17h00</span>
+            </div>
+            <div class="reseau-social-contact">
+                <a  href="https://www.linkedin.com/in/sem-gironde-energies-9785961b7/"><img class="icon-lkd-contact" src="{{asset('image/icone-linkedin.png')}}" alt="icone linkedin par icons8.fr"></a>
+            </div>
+        </div>
+            <div class="carte">
+                <a href= "https://www.google.fr/maps/@44.8876341,-0.5660462,18z/data=!3m1!4b1!4m2!6m1!1s1A0GrRSLM_OprgXhWmL8tZPxpubyBmH0?entry=ttu"><img class="google-map"src="{{asset('image/carte-adresse-gironde-energies.png')}}" alt="carte gooogle pour situer l'adresse de gironde énergies"></a>
+            </div>    
+    </div>
+</div>
+
+{# CREATION DU FORMULAIRE #}
+<div class="container">
+    <div class="contact">
+        <h3 class="titre-contact"> Nous contacter<h3>
+    </div>
+    <div class="trait-contact"></div>
+    <div>
+        {{ form_start(form) }}
+        <div>
+        {{ form_label(form.nomContact) }}
+        {{ form_widget(form.nomContact) }}
+        </div>
+        <div>
+        {{ form_label(form.prenomContact) }}
+        {{ form_widget(form.prenomContact) }}
+        </div>
+        <div>
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        </div>
+        <div>
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
+        </div>
+        {{ form_rest(form) }}
+        
+        {{ form_end(form) }}
+        <div class="button">
+            <button type="submit" class="btn btn-submit">Envoyer</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

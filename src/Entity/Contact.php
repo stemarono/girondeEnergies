@@ -108,4 +108,9 @@ class Contact
 
         return $this;
     }
+
+    function __toString()
+    {
+        return $this->message;
+    }
 }

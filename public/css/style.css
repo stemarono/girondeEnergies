@@ -10,6 +10,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
 html, body{
     height:100%;
@@ -40,7 +41,7 @@ li{
    justify-content: space-between;    
 }
 .logo{
-    max-width: 220px;
+    max-width: 200px;
 }
 .logo-card{
     width:100%;
@@ -54,12 +55,11 @@ li{
     display: flex;
     justify-content: space-around;
     position:relative;
-    top:0px;
-    z-index:99;      
+    top:0px;       
 }
 
 .menu-item{
-    padding:40px;
+    padding:20px;
   
 }
 .submenu-item{
@@ -70,12 +70,12 @@ li{
   padding-right: 15px;
    font-size:1em; 
 }
-.menu-presentation,.menu-activites,.menu-photovoltaiques{
+.menu-presentation,.menu-activites,.menu-photovoltaiques, .menu-administration{
      display:none;  
      text-align:center;
 }
 
-.menu li:hover .menu-presentation,.menu li:hover .menu-activites,.menu-activites li:hover .menu-photovoltaiques
+.menu li:hover .menu-presentation,.menu li:hover .menu-activites,.menu-activites li:hover .menu-photovoltaiques, .menu li:hover .menu-administration
 {
     display:block;
     background:#fff;
@@ -101,15 +101,21 @@ li{
 }
 .menu-activites{
     position:absolute;
-    top:80px;
-    left:430px;
+    top:60px;
+    left:350px;
     width:100px;
 }
 .menu-photovoltaiques{
     position:absolute;
     top:0px;
-    left:220px;
+    left:180px;
     
+}
+.menu-administration{
+    position:absolute;
+    top:50px;
+    left:870px;
+  
 }
 .submenu-photovoltaique{
     padding-bottom: 15px;
@@ -118,8 +124,8 @@ li.menu-dropdown,li .submenu-item{
     display:block;
 }
 li .menu-dropdown:hover, li .submenu-item:hover{
-    background-color: #3f4f59;
-    color:#f9ae2f;
+    background-color: #f9c12e;
+    color:#3f4f59;
 }
 
 /*pour avoir le soulignement sous les sous-menu*/
@@ -198,7 +204,7 @@ vertical-align: top; */
  
 /*FIN PRESENTATION*/
 
-/*les actualités*/
+/*les actualités (les 2 actualités dans la page d'accueil*/
 
 .actualite{
     display: flex;
@@ -258,6 +264,91 @@ width:100%;
 }
 
 /*FIN QUI SOMMES-NOUS*/
+
+/*CONTACT*/
+.titre-contact{
+    text-align:start;
+    margin: 15px 0;
+}
+.horaires, .titre-coordonnées,.titre-contact{
+    font-size:1.2em;
+    font-weight: 600;
+    color:var(--text-color);
+}
+.trait-adresse{
+    border-top:2px solid black;
+    border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    border-image-slice:5;
+    width:165px;
+    height: 20px;
+}
+.trait-horaire{
+    border-top:2px solid black;
+    border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    border-image-slice:5;
+    width:120px;
+    height: 20px; 
+}
+span{
+    color:var(--text-color);
+}
+.menu-coordonnées{
+    margin-bottom:30px;
+}
+.adresse,.phone-contact{
+    margin-bottom:20px;
+}
+.phone-contact{
+    display:flex;
+}
+.icon-phone{
+    margin-right: 5px;
+}
+.adresse-mail{
+    text-decoration: underline;
+}
+.adresse-mail:hover{
+    color:#3f4f59;
+    font-weight: bold;
+}
+
+.icon-lkd-contact{
+  width:40px;
+  margin:30px 0;
+}
+.carte{
+    max-width:400px;
+    position:relative;
+    left:500px;
+}
+.google-map{
+    width:100%;
+}
+.trait-contact{
+    border-top:2px solid black;
+    border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    border-image-slice:5;
+    width:145px;
+    height: 20px; 
+}
+.button{
+    width:100px;
+    margin:auto;
+}
+.btn-submit{
+    border:1px solid #f9c12e;
+    background-color: #f9c12e;
+    color:#3f4f59;
+    font-weight:400;
+    border-radius: 5px;
+    margin: 50px 0; 
+   
+}
+.btn-submit:hover{
+    background-color: #f49634;
+    color:white;
+}
+/*FIN CONTACT*/
 /*FOOTER*/
 .footer{
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
@@ -273,17 +364,18 @@ width:100%;
     color:var(--text-color);
 }
 .adresse{
-    text-align:center;
+    text-align:left;
+   font-weight: bold;
 }
 .legalite{
     display:flex;
     justify-content: center;
-    padding-top:80px;
+    padding-top:150px;
    
 }
 .phone{
     display:flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .icon-phone{
     max-width: 25px;
