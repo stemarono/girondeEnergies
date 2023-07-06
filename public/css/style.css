@@ -327,7 +327,8 @@ span{
     position:relative;
     left:400px;
     top:0px;
-    border:1px solid grey;
+    filter:brightness(90%);
+   
 }
 .google-map{
     width:100%;
@@ -338,6 +339,10 @@ span{
     border-image-slice:5;
     width:145px;
     height: 20px; 
+}
+.formulaire{
+    border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    border-image-slice:5;
 }
 
 .button{

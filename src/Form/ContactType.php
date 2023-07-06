@@ -24,17 +24,17 @@ class ContactType extends AbstractType
             ->add('prenomContact',TextType::class,[
                 'label'=>'Prénom :',
                 'label_attr'=>['class'=>'mb-2'],
-                'attr'=>['class'=>'form-control mb-4 w-75']
+                'attr'=>['class'=>' formulaire form-control mb-4 w-75']
             ])
             ->add('message',TextareaType::class,[
                 'label'=>'Message:',
                 'label_attr'=>['class'=>'mb-2'],
-                'attr'=>['class'=>'form-control mb-4 w-75']
+                'attr'=>['class'=>'formulaire form-control mb-4 w-75']
             ])
             ->add('email',EmailType::class,[
                 'label'=>'Adresse mail :',
                 'label_attr'=>['class'=>'mb-2'],
-                'attr'=>['class'=>'form-control mb-4 w-75']
+                'attr'=>['class'=>'formulaire form-control mb-4 w-75']
             ])
             ->add('dateCreation', HiddenType::class,[
                 'attr'=>['class'=>'form-control'],
