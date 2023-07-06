@@ -95,8 +95,8 @@ li{
 }
 .menu-presentation{
     position:absolute;
-    top:80px;
-    left:-15px;
+    top:60px;
+    left:-35px;
     
 }
 .menu-activites{
@@ -115,6 +115,7 @@ li{
     position:absolute;
     top:50px;
     left:870px;
+    z-index:99;
   
 }
 .submenu-photovoltaique{
@@ -268,10 +269,15 @@ width:100%;
 /*CONTACT*/
 .titre-contact{
     text-align:start;
-    margin: 15px 0;
+    margin: 30px 0 15px 0;
+}
+.titre-contact,.coordonnées,.trait-adresse,.trait-contact{
+    position: relative;
+    top:0px;
+    left:200px;
 }
 .horaires, .titre-coordonnées,.titre-contact{
-    font-size:1.2em;
+    font-size:1.1em;
     font-weight: 600;
     color:var(--text-color);
 }
@@ -319,7 +325,9 @@ span{
 .carte{
     max-width:400px;
     position:relative;
-    left:500px;
+    left:400px;
+    top:0px;
+    border:1px solid grey;
 }
 .google-map{
     width:100%;
@@ -331,6 +339,7 @@ span{
     width:145px;
     height: 20px; 
 }
+
 .button{
     width:100px;
     margin:auto;
@@ -348,6 +357,39 @@ span{
     background-color: #f49634;
     color:white;
 }
+
+/*CSS POUR LE POP-UP*/
+
+.overlay{
+    position:fixed;
+    left:0px;
+    top:0px;
+    background-color: rgba(0,0,0,0.5);
+    width:100%;
+    height:100%; 
+    z-index:99;
+    display:none;  
+}
+
+.popup{
+    margin:20% auto;
+    width:28%;
+    background-color: #fff;
+    border-radius:5px;
+    box-shadow:5px 10px 0 rgba(0,0,0,0.5);
+    padding:1em;
+}
+.btnClose{
+    position:relative;
+    left:150px;
+    cursor:pointer;
+    border:none;
+}
+.text{
+    font-size: 1.1em;
+    text-align: center;
+}
+
 /*FIN CONTACT*/
 /*FOOTER*/
 .footer{

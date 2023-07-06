@@ -16,6 +16,7 @@ class ContactController extends AbstractController
     public function index(Request $request, EntityManagerInterface $em): Response
     {
         $contact=new Contact();
+       
 
         $form=$this->createForm(ContactType::class,$contact);
         $form->handleRequest($request);
@@ -28,7 +29,7 @@ class ContactController extends AbstractController
         }
         return $this->render('contact/contact.html.twig', [
             'contact'=>$contact,
-            'form'=>$form,
+            'form'=>$form->createView(),
         ]);
     }
 }

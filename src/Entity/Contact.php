@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +32,8 @@ class Contact
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateModification = null;
+
+
 
     public function getId(): ?int
     {
@@ -109,8 +112,9 @@ class Contact
         return $this;
     }
 
-    function __toString()
+    function __construct()
     {
-        return $this->message;
+       $this->dateCreation= new DateTime('now'); 
     }
+    
 }
