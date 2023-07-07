@@ -97,34 +97,5 @@
        
     </div>
 </div>
-<script>
-var url_contact="{{path('app_contact')}}";
 
-$(function(){
-
-})
-
-function confirmer()
-{
-    if(confirm ('Nous avons bien reçu votre message. Vous serez contacté prochainement')){
-        $.ajax({
-            type:"POST",
-            url:url_contact,
-            data:{
-
-            },
-            beforeSend:function(){
-
-            },
-            success:function(response){
-                alert(response);
-            },
-            error: function(){
-                alert('il existe une erreur');
-            }
-        })
-    }
-}
-
-</script>
 {% endblock %}

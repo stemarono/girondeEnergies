@@ -34,7 +34,7 @@ class FilialeController extends AbstractController
             return $this->redirectToRoute('app_filiale_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('filiale/new.html.twig', [
+        return $this->render('filiale/new.html.twig', [
             'filiale' => $filiale,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class FilialeController extends AbstractController
             return $this->redirectToRoute('app_filiale_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('filiale/edit.html.twig', [
+        return $this->render('filiale/edit.html.twig', [
             'filiale' => $filiale,
             'form' => $form,
         ]);

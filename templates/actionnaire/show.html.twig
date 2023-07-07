@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actionnaire{% endblock %}
+
+{% block body %}
+    <h1>Actionnaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ actionnaire.id }}</td>
+            </tr>
+            <tr>
+                <th>NomStructure</th>
+                <td>{{ actionnaire.nomStructure }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ actionnaire.logo }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ actionnaire.dateCreation ? actionnaire.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateModification</th>
+                <td>{{ actionnaire.dateModification ? actionnaire.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_actionnaire_index') }}">back to list</a>
+
+    <a href="{{ path('app_actionnaire_edit', {'id': actionnaire.id}) }}">edit</a>
+
+    {{ include('actionnaire/_delete_form.html.twig') }}
+{% endblock %}

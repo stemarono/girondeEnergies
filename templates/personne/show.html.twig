@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne{% endblock %}
+
+{% block body %}
+    <h1>Personne</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ personne.id }}</td>
+            </tr>
+            <tr>
+                <th>NomPersonne</th>
+                <td>{{ personne.nomPersonne }}</td>
+            </tr>
+            <tr>
+                <th>PrenomPersonne</th>
+                <td>{{ personne.prenomPersonne }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ personne.dateCreation ? personne.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateModification</th>
+                <td>{{ personne.dateModification ? personne.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personne_index') }}">back to list</a>
+
+    <a href="{{ path('app_personne_edit', {'id': personne.id}) }}">edit</a>
+
+    {{ include('personne/_delete_form.html.twig') }}
+{% endblock %}

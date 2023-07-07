@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actionnaire index{% endblock %}
+
+{% block body %}
+    <h1>Actionnaire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomStructure</th>
+                <th>Logo</th>
+                <th>DateCreation</th>
+                <th>DateModification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actionnaire in actionnaires %}
+            <tr>
+                <td>{{ actionnaire.id }}</td>
+                <td>{{ actionnaire.nomStructure }}</td>
+                <td>{{ actionnaire.logo }}</td>
+                <td>{{ actionnaire.dateCreation ? actionnaire.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actionnaire.dateModification ? actionnaire.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_actionnaire_show', {'id': actionnaire.id}) }}">show</a>
+                    <a href="{{ path('app_actionnaire_edit', {'id': actionnaire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_actionnaire_new') }}">Create new</a>
+{% endblock %}

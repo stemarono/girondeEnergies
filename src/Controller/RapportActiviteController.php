@@ -34,7 +34,7 @@ class RapportActiviteController extends AbstractController
             return $this->redirectToRoute('app_rapport_activite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('rapport_activite/new.html.twig', [
+        return $this->render('rapport_activite/new.html.twig', [
             'rapport_activite' => $rapportActivite,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class RapportActiviteController extends AbstractController
             return $this->redirectToRoute('app_rapport_activite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('rapport_activite/edit.html.twig', [
+        return $this->render('rapport_activite/edit.html.twig', [
             'rapport_activite' => $rapportActivite,
             'form' => $form,
         ]);

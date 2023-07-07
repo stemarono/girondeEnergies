@@ -14,7 +14,6 @@
 }
 html, body{
     height:100%;
-    /* position:relative; */
 }
 
 img{
@@ -34,6 +33,7 @@ li{
    
 }
 /*FIN GENERAL*/
+
 /* HEADER*/
 
 .content{
@@ -97,18 +97,20 @@ li{
     position:absolute;
     top:60px;
     left:-35px;
-    
+    z-index:99;   
 }
 .menu-activites{
     position:absolute;
     top:60px;
     left:350px;
     width:100px;
+    z-index:99;
 }
 .menu-photovoltaiques{
     position:absolute;
     top:0px;
     left:180px;
+    z-index:99;
     
 }
 .menu-administration{
@@ -166,7 +168,7 @@ li .menu-dropdown:hover, li .submenu-item:hover{
 }
 /*image du carousel*/
 .c-item{
-    height: 800px;
+    height: 600px;
 }
 .img-carousel{
     height: 75%;
@@ -175,10 +177,13 @@ li .menu-dropdown:hover, li .submenu-item:hover{
 }
 /*FIN BODY DE L'ACCUEIL*/
 
-/* PRESENTATION*/
+/* PRESENTATION / QUI SOMMES-NOUS */
+
+
 .title{
     text-align: center;
     margin: 50px 0px;
+   
 }
 .contenu{
    margin: 50px;
@@ -187,23 +192,30 @@ li .menu-dropdown:hover, li .submenu-item:hover{
    display:flex;
    justify-content: space-around;
 }
-.photo{
-max-width:500px;
-/* display:inline-block;
-vertical-align: top; */
-}
-.photo-sdeeg{
-    width:100%;
-}
+
 .paragraph{
     display:inline-block;
-    margin-top:25px;
+    margin-top:10px;
     margin-left:120px; 
     text-align: justify;
     width:100vw; 
 }
+
+.photo{
+   max-width:500px;
+    position:relative;
+    top:15px;
+    left:100px;
+ } 
+ .photo-sdeeg{
+    width:100%;
+}
+
+ /* .history{
+    max-width:550px;
+}*/
  
-/*FIN PRESENTATION*/
+/*FIN PRESENTATION/ QUI SOMMES-NOUS*/
 
 /*les actualités (les 2 actualités dans la page d'accueil*/
 
@@ -252,19 +264,8 @@ vertical-align: top; */
 }
 
 /*FIN BODY DE L'ACCUEIL*/
-/* QUI SOMMES-NOUS */
 
-.history{
-    max-width:550px;
-}
-.photo{
-width:100%;
-   position:relative;
-   top:15px;
-   left:100px;
-}
 
-/*FIN QUI SOMMES-NOUS*/
 
 /*CONTACT*/
 .titre-contact{
@@ -444,3 +445,47 @@ span{
 }
 
 /*FIN FOOTER*/
+
+/*RESPONSIVE*/
+/*ECRAN ORDINATEUR PORTABLE*/
+
+@media  screen and (max-width: 1024px) {
+    /*PAGE ABOUT*/
+
+    .about-card{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .paragraph{
+        margin-top:60px;
+        width:500px;
+        position:relative;
+        left:50px;    
+    }
+    .photo{
+        max-width:500px;
+         position:relative;
+         top:15px;
+         left:170px;
+      } 
+      .photo-sdeeg{
+         width:100%;
+     }
+   
+}
+
+/*ECRAN TABLETTE*/
+
+@media screen and (max-width: 768px){
+    /*ABOUT*/
+
+    .paragraph{
+        margin-top:60px;
+        width:500px;
+        position:relative;
+        left:0px;
+    }
+}
+/* FIN REPONSIVE*/

@@ -34,7 +34,7 @@ class ActualiteController extends AbstractController
             return $this->redirectToRoute('app_actualite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('actualite/new.html.twig', [
+        return $this->render('actualite/new.html.twig', [
             'actualite' => $actualite,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class ActualiteController extends AbstractController
             return $this->redirectToRoute('app_actualite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('actualite/edit.html.twig', [
+        return $this->render('actualite/edit.html.twig', [
             'actualite' => $actualite,
             'form' => $form,
         ]);
