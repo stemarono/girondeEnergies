@@ -399,7 +399,7 @@ span{
 /*FIN CONTACT*/
 /*FOOTER*/
 .footer{
-    background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#f9c12e,#fcd726,#feed17);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -410,6 +410,7 @@ span{
     padding: 10px;
     font-family: 'Poppins';
     color:var(--text-color);
+    width:100%;
 }
 .adresse{
     text-align:left;
@@ -435,13 +436,19 @@ span{
 {
     margin-right:25px;
 }
-
+.mention a, .condition a, .accessibilite a, .mail a{
+    text-decoration: underline;
+}
+.mention a:hover, .condition a:hover, .accessibilite a:hover,.mail a:hover{
+    font-weight: 600;
+}
 .trait-union
 {
     margin-right:15px;
 }
 .icon-lkd{
-    vertical-align: middle;
+   display: flex;
+   justify-content: end;
 }
 
 /*FIN FOOTER*/
@@ -450,6 +457,99 @@ span{
 /*ECRAN ORDINATEUR PORTABLE*/
 
 @media  screen and (max-width: 1024px) {
+    /*HEADER*/
+    .logo{
+        max-width: 180px;
+    }
+    .logo-card{
+        width:100%;
+        position:relative;
+        top:-20px;
+        left:-35px;
+    }
+    .menu{
+        font-family:'Poppins';
+        font-size:1em; 
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .menu-item{
+        padding:20px;
+      
+    }
+    .submenu-item{
+        padding-bottom: 20px;
+    }
+    .menu-dropdown,.submenu-item{
+      font-weight: normal;
+      padding-right: 15px;
+       font-size:1em; 
+    }
+    .menu-presentation,.menu-activites,.menu-photovoltaiques, .menu-administration{
+         display:none;  
+         text-align:center;
+    }
+    
+    .menu li:hover .menu-presentation,.menu li:hover .menu-activites,.menu-activites li:hover .menu-photovoltaiques, .menu li:hover .menu-administration
+    {
+        display:block;
+        background:#fff;
+        color:#3f4f59;
+        padding:5px; 
+    }
+    
+    .menu li:hover .menu-presentation{
+        width:320px;    
+    }
+    .menu li:hover .menu-activites{
+        width:220px; 
+        height: 70px;   
+    }
+    .menu-activites li:hover .menu-photovoltaiques{
+        width:200px;
+        height:70px;  
+    }
+    .menu-presentation{
+        position:absolute;
+        top:50px;
+        left:-55px;
+        z-index:99;   
+    }
+    .menu-activites{
+        position:absolute;
+        top:50px;
+        left:230px;
+        width:100px;
+        z-index:99;
+    }
+    .menu-photovoltaiques{
+        position:absolute;
+        top:0px;
+        left:180px;
+        z-index:99;
+        
+    }
+    .menu-administration{
+        position:absolute;
+        top:50px;
+        left:600px;
+        width:200px;
+        z-index:99;
+      
+    }
+    .submenu-photovoltaique{
+        padding-bottom: 15px;
+    }
+    li.menu-dropdown,li .submenu-item{
+        display:block;
+    }
+    li .menu-dropdown:hover, li .submenu-item:hover{
+        background-color: #f9c12e;
+        color:#3f4f59;
+    }
+
+    /*FIN HEADER*/
     /*PAGE ABOUT*/
 
     .about-card{
@@ -473,7 +573,68 @@ span{
       .photo-sdeeg{
          width:100%;
      }
+   /*FIN PAGE ABOUT*/
+
+   /*FOOTER*/
    
+    .footer{
+        font-size:0.85em;
+        display:flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-family: 'Poppins';
+        color:var(--text-color);
+        background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100%;
+    }
+    .adresse{
+        text-align:left;
+       font-weight: 600;
+       width:200px;
+    }
+    .legalite{
+        display:flex;
+        justify-content: center;
+        padding-top:150px;
+    
+    }
+    .phone{
+        display:flex;
+        justify-content: flex-start;
+    }
+    .icon-phone{
+        max-width: 25px;
+    }
+    .number{
+        margin-left:5px;
+    }
+    .mention,.condition,.accessibilite
+    {
+        margin-right:25px;
+        text-decoration: underline;
+    }
+    .metion a:hover, .condition a:hover, .accessibilite a:hover{
+        font-weight: bold;
+    }
+
+    .trait-union
+    {
+        margin-right:15px;
+    }
+    img .icon-lk{
+      position:absolute;
+      left:50px;
+    }
+    .mail a{
+        text-decoration: underline;
+    }
+    .mail:hover{
+        font-weight: bold;
+    }
+
+   /*FIN FOOTER*/
 }
 
 /*ECRAN TABLETTE*/
@@ -484,8 +645,88 @@ span{
     .paragraph{
         margin-top:60px;
         width:500px;
-        position:relative;
-        left:0px;
+        margin-left: 50px;    
     }
+    .photo{
+        max-width:500px;
+         position:relative;
+         top:15px;
+         left:50px;
+      } 
+      .photo-sdeeg{
+         width:100%;
+     }
+
+     /*FIN ABOUT */
+     /*FOOTER*/
+     .footer{
+        font-size:0.7em;
+        display:flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-family: 'Poppins';
+        color:var(--text-color);
+        background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100%;
+    }
+    .adresse{
+        text-align:left;
+       font-weight: 600;
+       width:200px;
+    }
+    .legalite{
+        display:flex;
+        justify-content: center;
+        padding-top:150px;
+    
+    }
+    .phone{
+        display:flex;
+        justify-content: flex-start;
+    }
+    .icon-phone{
+        max-width: 25px;
+    }
+    .number{
+        margin-left:5px;
+    }
+    .mention,.condition,.accessibilite
+    {
+        margin-right:25px;
+        text-decoration: underline;
+    
+    }
+    .mention{
+        width:100px;
+    }
+    .condition,.update{
+        width:150px;
+    }
+    .metion a:hover, .condition a:hover, .accessibilite a:hover{
+        font-weight: bold;
+    }
+
+    .trait-union
+    {
+        margin-right:15px;
+    }
+
+    .part2{
+        width:200px;
+    }
+    img .icon-lk{
+      position:absolute;
+      left:50px;
+    }
+    .mail a{
+        text-decoration: underline;
+    }
+    .mail:hover{
+        font-weight: bold;
+    }
+
+     /*FIN FOOTER*/
 }
 /* FIN REPONSIVE*/
