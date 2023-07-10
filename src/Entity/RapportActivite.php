@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RapportActiviteRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -18,9 +19,11 @@ class RapportActivite
     private ?string $rapport = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     public function getId(): ?int

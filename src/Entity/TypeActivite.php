@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\TypeActiviteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,9 +24,11 @@ class TypeActivite
     private ?string $descriptionTypeActivite = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     #[ORM\OneToMany(mappedBy: 'typeActivite', targetEntity: Activite::class)]
@@ -151,5 +154,10 @@ class TypeActivite
         }
 
         return $this;
+    }
+
+    function __toString()
+    {
+        return $this->typeactivite;
     }
 }

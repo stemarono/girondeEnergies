@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CommuneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,9 +21,11 @@ class Commune
     private ?string $nomCommune = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     #[ORM\OneToMany(mappedBy: 'commune', targetEntity: Activite::class)]
@@ -136,5 +139,9 @@ class Commune
         }
 
         return $this;
+    }
+    function __toString()
+    {
+        return $this->nomCommune;
     }
 }

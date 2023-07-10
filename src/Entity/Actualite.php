@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ActualiteRepository;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ActualiteRepository::class)]
@@ -27,9 +28,11 @@ class Actualite
     private ?string $imageUrl = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     public function getId(): ?int
@@ -107,5 +110,9 @@ class Actualite
         $this->dateModification = $dateModification;
 
         return $this;
+    }
+    function __toString()
+    {
+        return $this->dateActualite;
     }
 }

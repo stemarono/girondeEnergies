@@ -29,6 +29,16 @@ class ActualiteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image=$form->get('imageUrl')->getData();
+            if($image){
+                $fichier=$image->getClientOriginalName();
+                $dossier="../public/upload";
+                $move=$image->move($dossier,$fichier);
+                if($move){
+                    $actualite->setImageUrl($fichier);
+                }
+            }
             $actualiteRepository->save($actualite, true);
 
             return $this->redirectToRoute('app_actualite_index', [], Response::HTTP_SEE_OTHER);
@@ -55,6 +65,16 @@ class ActualiteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            $image=$form->get('imageUrl')->getData();
+            if($image){
+                $fichier=$image->getClientOriginalName();
+                $dossier="../public/upload";
+                $move=$image->move($dossier,$fichier);
+                if($move){
+                    $actualite->setImageUrl($fichier);
+                }
+            }
             $actualiteRepository->save($actualite, true);
 
             return $this->redirectToRoute('app_actualite_index', [], Response::HTTP_SEE_OTHER);

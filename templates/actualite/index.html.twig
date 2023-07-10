@@ -25,12 +25,12 @@
                 <td>{{ actualite.dateActualite ? actualite.dateActualite|date('Y-m-d') : '' }}</td>
                 <td>{{ actualite.titreActualite }}</td>
                 <td>{{ actualite.description }}</td>
-                <td>{{ actualite.imageUrl }}</td>
+                <td><img class="img-fluid zoom" src="{{asset('upload/'~actualite.imageUrl)}}" alt="" width="20%"></td>
                 <td>{{ actualite.dateCreation ? actualite.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ actualite.dateModification ? actualite.dateModification|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_actualite_show', {'id': actualite.id}) }}">show</a>
-                    <a href="{{ path('app_actualite_edit', {'id': actualite.id}) }}">edit</a>
+                    <a href="{{ path('app_actualite_show', {'id': actualite.id}) }}">Afficher</a>
+                    <a href="{{ path('app_actualite_edit', {'id': actualite.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_actualite_new') }}">Create new</a>
+    <a href="{{ path('app_actualite_new') }}">Créer une nouvelle actualité</a>
 {% endblock %}

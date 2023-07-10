@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PrecommandeRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +26,9 @@ class Precommande
     private ?string $prenomDemandeur = null;
 
     #[ORM\Column(length: 320,unique:true)]
+    #[Assert\Email(
+        message:'cette adresse mail {{value}} n\'est pas une adresse valide.',
+    )]
     private ?string $emailDemandeur = null;
 
     #[ORM\Column(length: 15)]
@@ -37,9 +41,11 @@ class Precommande
     private ?string $localisation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     #[ORM\ManyToOne(inversedBy: 'precommandes')]

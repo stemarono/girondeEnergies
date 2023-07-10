@@ -29,6 +29,15 @@ class ActiviteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image=$form->get('imageUrl')->getData();
+            if($image){
+                $fichier=$image->getActiviteOriginalName();
+                $dossier='../public/upload';
+                $move=$image->move($dossier,$fichier);
+                if($move){
+                    $activite->setImageUrl($fichier);
+                }
+            }
             $activiteRepository->save($activite, true);
 
             return $this->redirectToRoute('app_activite_index', [], Response::HTTP_SEE_OTHER);

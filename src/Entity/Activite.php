@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ActiviteRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -24,12 +25,24 @@ class Activite
     private ?bool $enProjet = null;
 
     #[ORM\Column(length: 255, nullable: true,unique:true)]
+    #[Assert\Unique]
+    #[Assert\Url(
+        message:'cette url {{value}} n\'est pas valide.',
+    )]
+    #[Assert\Image(
+        minWidth:200,
+        maxWWidth:400,
+        minHeight:200,
+        maxWidth:400,
+    )]
     private ?string $imageUrl = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\Date]
     private ?\DateTimeInterface $dateModification = null;
 
     #[ORM\ManyToOne(inversedBy: 'activites')]
@@ -37,6 +50,8 @@ class Activite
 
     #[ORM\ManyToOne(inversedBy: 'activites')]
     private ?typeActivite $typeActivite = null;
+
+    
 
     public function getId(): ?int
     {
@@ -137,5 +152,9 @@ class Activite
         $this->typeActivite = $typeActivite;
 
         return $this;
+    }
+    function __toString()
+    {
+        return $this->titreRealisation;
     }
 }

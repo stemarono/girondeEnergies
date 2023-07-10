@@ -2,14 +2,14 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-<div id="overlay" class="overlay">
+{# <div id="overlay" class="overlay">
     <div id="popup" class="popup">
         <h3 class="text">Votre message a bien été envoyé.<br> Nous vous contacterons prochainement</h3>
         <div class="text-center">
             <button id="btnClose" class="btnClose"> OK</button>
         </div>
     </div>
-</div>
+</div> #}
 <div class="container">
     <div class="titre-contact">
         <h3 class="titre-coordonnées">Nos coordonnées</h3>
@@ -64,7 +64,12 @@
 </div>
 
 {# CREATION DU FORMULAIRE #}
-<div class="container">
+{% for message in app.flashes('success') %}
+<div class="alert alert-success mt-4">
+    {{message}}
+</div>
+{% endfor %}
+<div class="container-fluid">
     <div class="contact">
         <h3 class="titre-contact"> Nous contacter<h3>
     </div>
