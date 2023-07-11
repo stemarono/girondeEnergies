@@ -22,8 +22,8 @@
                 <td>{{ actionnaire.id }}</td>
                 <td>{{ actionnaire.nomStructure }}</td>
                 <td>{{ actionnaire.logo }}</td>
-                <td>{{ actionnaire.dateCreation ? actionnaire.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ actionnaire.dateModification ? actionnaire.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actionnaire.dateCreation ? actionnaire.dateCreation|date('m-d-Y H:i:s') : '' }}</td>
+                <td>{{ actionnaire.dateModification ? actionnaire.dateModification|date('m-d-Y H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_actionnaire_show', {'id': actionnaire.id}) }}">show</a>
                     <a href="{{ path('app_actionnaire_edit', {'id': actionnaire.id}) }}">edit</a>

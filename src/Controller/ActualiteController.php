@@ -16,7 +16,7 @@ class ActualiteController extends AbstractController
     #[Route('/', name: 'app_actualite_index', methods: ['GET'])]
     public function index(ActualiteRepository $actualiteRepository): Response
     {
-        return $this->render('actualite/index.html.twig', [
+        return $this->render('actualite/actu.html.twig', [
             'actualites' => $actualiteRepository->findAll(),
         ]);
     }
@@ -95,4 +95,6 @@ class ActualiteController extends AbstractController
 
         return $this->redirectToRoute('app_actualite_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    
 }

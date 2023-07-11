@@ -18,17 +18,58 @@
             </div>
         </div>
         <div class="actualite">
-            <div>
-                <img class="img-fluid zoom" src="{{asset('upload/'~actualite.imageUrl)}}" alt="" width="20%">
+            <div class="carte-actu">
+                <div class= 'photo'>
+                    <div class="card-photo">
+                        <img class="img-fluid zoom" src="{{asset('image/temob-actualite.jpg')}}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="date">
+                    <p>le 08 Février 2023</p>
+                    </div>
+                     <div class="card-titre">
+                        <h4>Assise de la transition énergétique</h4>
+                     </div>
+                    <div class="card-body">
+                        <p>Rendez-vous pour la signature de la charte d’engagement du réseau Néo-Aquitain de stations d’avitaillement multiénergies locales et 
+                        100 % renouvelables, mercredi 24 mai à 12h00 au Palais des congrès de […]</p>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn-suite">lire la suite </button>
+                    </div>
+
+                </div>
             </div>
-            <div>
-                {{actualite.dateActualite}}
-                {{actualtie.titreActualite}}
-                {{actualite.description}}
+            <div class="carte-actu">
+                    <div class="photo">
+                        <img class="card-photo2" src="{{asset('image/forum-actualite.jpg')}}" alt="">
+                    </div>
+                <div>
+                    <div class="date">
+                    <p>le 07 Février 2023</p>
+                    </div>
+                    <div class="card-titre">
+                        <h4>Forum des énergies le 11 Mai 2023</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Vous êtes élu(e) ou agent de collectivité, inscrivez vous au Forum des Energies, 
+                        qui se tiendra sur notre site le 11 mai 2023. Toutes les communes et intercommunalités de Gironde […]</p>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn-suite">lire la suite </button>
+                    </div>
+                </div>
             </div>
+            </div>
+           
         </div>
         <div class="video">
-            <iframe width="660" height="415" src="https://www.youtube.com/embed/XJiELv27qz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="550" height="305" src="https://www.youtube.com/embed/XJiELv27qz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="title-video">Contrat de développement territorial des énergies thermiques renouvelables de la Gironde (1'47mn)</p>
+        </div>
+        <div>
+            
         </div>
             
 {% endblock %}

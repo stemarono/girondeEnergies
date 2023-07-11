@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualite index{% endblock %}
+
+{% block body %}
+<div>
+    <div class="titre-actu">
+        <h1>Les Actualités</h1>
+        <div class="trait-actu"></div>
+    </div>
+    <table class="table table-actu">
+        <tbody>
+        {% for actualite in actualites %}
+            <tr class="card-actu">
+                <td><img class="img-fluid zoom" src="{{asset('upload/'~actualite.imageUrl)}}" alt="" width="70%"></td>
+                <td class="actu-date">{{ actualite.dateActualite ? actualite.dateActualite|date('d-m-Y') : '' }}</td>
+                <td class="actu-titre">{{ actualite.titreActualite }}</td>
+                <td class="actu-description">{{ actualite.description }}</td>
+                
+            </tr>
+       
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

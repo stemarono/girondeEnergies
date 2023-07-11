@@ -14,45 +14,35 @@ class Contact
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Assert\NotNull()]
+   
     private ?int $id = null;
 
     #[ORM\Column(length: 63)]
     #[Assert\NotNull()]
-    #[Assert\Regex(
-        pattern:'/^[a-z]+$/i',
-        htmlPattern:'^[a-zA-Z]+$'
-    )]
+    
     private ?string $nomContact = null;
 
     #[ORM\Column(length: 63)]
     #[Assert\NotNull()]
-    #[Assert\Regex(
-        pattern:'/^[a-z]+$/i',
-        htmlPattern:'^[a-zA-Z]+$'
-    )]
+   
     private ?string $prenomContact = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotNull()]
-    #[Assert\Regex('/^\w+/')]
+   
     private ?string $message = null;
 
     #[ORM\Column(length: 320)]
     #[Assert\NotNull()]
-    #[Assert\Email(
-        message: 'l\'adresse mail {{ value }} n\'est pas valide.'
-    )]
+   
     private ?string $email = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date]
-    #[Assert\NotNull()]
+   
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date]
-    #[Assert\NotNull()]
+   
     private ?\DateTimeInterface $dateModification = null;
 
     function __construct()

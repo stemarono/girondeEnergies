@@ -29,11 +29,11 @@
             </tr>
             <tr>
                 <th>DateCreation</th>
-                <td>{{ activite.dateCreation ? activite.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ activite.dateCreation ? activite.dateCreation|date('m-d-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>DateModification</th>
-                <td>{{ activite.dateModification ? activite.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ activite.dateModification ? activite.dateModification|date('m-d-Y H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>

@@ -226,14 +226,28 @@ li .menu-dropdown:hover, li .submenu-item:hover{
 }
 .card-actu{
     width:450px;
-    text-align: justify;
-   
+    text-align: justify;   
+}
+.date{
+    font-style: italic;
+    font-weight: 600;
+    position:relative;
+    top:20px;
+    left:20px;
+}
+.card-titre{
+    position:relative;
+    left:20px;
+    padding-top:10px;
 }
 .photo{
     text-align: center;
 }
 .card-photo{
     width:70%;  
+}
+.card-photo2{
+    width:45%;
 }
 .card-body{
     padding-top: 30px;
@@ -255,16 +269,55 @@ li .menu-dropdown:hover, li .submenu-item:hover{
     font-weight: bold;
     float:right;
 }
+.btn-suite:hover{
+background:#f9c12e;
+color:#3f4f59;
+}
 
 /*mise en place de la video*/
 
 .video{
+    
     margin:150px 0;
     text-align: center;
+}
+.title-video{
+    width:500px;
+    margin:auto;
+    font-weight:600;
 }
 
 /*FIN BODY DE L'ACCUEIL*/
 
+/*ACTUALITES*/
+
+.titre-actu{
+    margin-top: 95px;
+    margin-bottom:150px;
+    text-align: center;
+    color:#3f4f59;
+}
+.trait-actu{
+    position:absolute;
+    left:600px;
+    border-top:2px solid black;
+    border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+    border-image-slice:5;
+    width:270px;
+    height: 120px;
+}
+.card-actu{
+    margin:25px 0;
+}
+.actu-date{
+    width:150px;
+}
+
+.actu-description{
+    width:600px;
+}
+
+/*FIN ACTUALITES*/
 
 
 /*CONTACT*/

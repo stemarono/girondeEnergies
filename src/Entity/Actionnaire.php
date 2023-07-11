@@ -18,19 +18,19 @@ class Actionnaire
     private ?int $id = null;
 
     #[ORM\Column(length: 50,unique:true)]
-    #[Assert\Unique()]
+    
     private ?string $nomStructure = null;
 
     #[ORM\Column(length: 255,unique:true)]
-    #[Assert\Unique()]
+  
     private ?string $logo = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date()]
+   
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date()]
+   
     private ?\DateTimeInterface $dateModification = null;
 
     #[ORM\OneToMany(mappedBy: 'actionnaire', targetEntity: Personne::class)]

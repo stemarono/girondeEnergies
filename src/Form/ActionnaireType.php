@@ -21,7 +21,9 @@ class ActionnaireType extends AbstractType
             ])
             ->add('logo', FileType::class,[
                 'label'=>'logo',
-                'attr'=>['class'=>'form-control']
+                'mapped'=>false,
+                'required'=>false,
+                'attr'=>['class'=>'form-control','onchange'=>'previewImage(this,"affiche_photo")'],
             ])
             ->add('dateCreation',DateType::class,[
                 'label'=>'date de création',

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ActualiteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
@@ -28,12 +30,19 @@ class Actualite
     private ?string $imageUrl = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date]
+   
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\Date]
+   
     private ?\DateTimeInterface $dateModification = null;
+
+    #[ORM\ManyToOne(inversedBy: 'actualites')]
+    private ?Accueil $Accueil = null;
+
+   
+
+   
 
     public function getId(): ?int
     {
@@ -115,4 +124,19 @@ class Actualite
     {
         return $this->dateActualite;
     }
+
+    public function getAccueil(): ?Accueil
+    {
+        return $this->Accueil;
+    }
+
+    public function setAccueil(?Accueil $Accueil): static
+    {
+        $this->Accueil = $Accueil;
+
+        return $this;
+    }
+
+ 
+   
 }

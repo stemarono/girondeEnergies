@@ -28,7 +28,17 @@ class ActionnaireController extends AbstractController
         $form = $this->createForm(ActionnaireType::class, $actionnaire);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) { 
+            
+            $image=$form->get('logo')->getData();
+            if($image){
+                $fichier=$image->getClientOriginalName();
+                $dossier='../public/upload';
+                $move=$image->move($dossier,$fichier);
+                if($move){
+                    $actionnaire->setLogo($fichier);
+                }
+            }
             $actionnaireRepository->save($actionnaire, true);
 
             return $this->redirectToRoute('app_actionnaire_index', [], Response::HTTP_SEE_OTHER);
@@ -55,6 +65,16 @@ class ActionnaireController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image=$form->get('logo')->getData();
+            if($image){
+                $fichier=$image->getClientOriginalName();
+                $dossier='../public/upload';
+                $move=$image->move($dossier,$fichier);
+                if($move){
+                    $actionnaire->setLogo($fichier);
+                }
+            }
             $actionnaireRepository->save($actionnaire, true);
 
             return $this->redirectToRoute('app_actionnaire_index', [], Response::HTTP_SEE_OTHER);
