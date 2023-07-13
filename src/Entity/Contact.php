@@ -18,22 +18,22 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 63)]
-    #[Assert\NotNull()]
+    
     
     private ?string $nomContact = null;
 
     #[ORM\Column(length: 63)]
-    #[Assert\NotNull()]
+   
    
     private ?string $prenomContact = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Assert\NotNull()]
+    
    
     private ?string $message = null;
 
     #[ORM\Column(length: 320)]
-    #[Assert\NotNull()]
+    
    
     private ?string $email = null;
 

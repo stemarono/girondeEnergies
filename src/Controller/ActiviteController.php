@@ -20,6 +20,11 @@ class ActiviteController extends AbstractController
             'activites' => $activiteRepository->findAll(),
         ]);
     }
+    #[Route('/carte', name: 'app_activite_carte', methods: ['GET'])]
+    public function carte(): Response
+    {
+        return $this->render('activite/carte.html.twig');
+    }
 
     #[Route('/new', name: 'app_activite_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ActiviteRepository $activiteRepository): Response

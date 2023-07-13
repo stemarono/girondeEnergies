@@ -17,21 +17,21 @@ class ActionnaireType extends AbstractType
         $builder
             ->add('nomStructure',TextType::class,[
                 'label'=>'nom de la structure',
-                'attr'=>['class'=>'form-control']
+                'attr'=>['class'=>'form ms-5 mt-5 mb-3']
             ])
             ->add('logo', FileType::class,[
                 'label'=>'logo',
                 'mapped'=>false,
                 'required'=>false,
-                'attr'=>['class'=>'form-control','onchange'=>'previewImage(this,"affiche_photo")'],
+                'attr'=>['class'=>'form ms-5 my-3','onchange'=>'previewImage(this,"affiche_photo")'],
             ])
             ->add('dateCreation',DateType::class,[
                 'label'=>'date de création',
-                'attr'=>['class'=>'form-control']
+                'attr'=>['class'=>'form my-3']
             ])
             ->add('dateModification',DateType::class,[
                 'label'=>'date de modification',
-                'attr'=>['class'=>'form-control']
+                'attr'=>['class'=>'form my-3']
             ])
         ;
     }

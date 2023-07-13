@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Actionnaire{% endblock %}
+{% block title %}Nouvel Actionnaire{% endblock %}
 
 {% block body %}
-    <h1>Create new Actionnaire</h1>
-
+<div class="text-center">
+    <h1>Créer un nouvel Actionnaire</h1>
+</div>
+<div class="w-50 m-auto">
     {{ include('actionnaire/_form.html.twig') }}
-
-    <a href="{{ path('app_actionnaire_index') }}">back to list</a>
+</div>
+    <a  class="btn-back" href="{{ path('app_actionnaire_index') }}">revenir à la liste </a>
 {% endblock %}

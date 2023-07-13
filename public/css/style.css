@@ -62,10 +62,8 @@ li{
     padding:20px;
   
 }
-.submenu-item{
-    padding-bottom: 20px;
-}
-.menu-dropdown,.submenu-item{
+
+.menu-dropdown,.submenu-item,.menu-activite-dropdown{
   font-weight: normal;
   padding-right: 15px;
    font-size:1em; 
@@ -91,7 +89,7 @@ li{
 }
 .menu-activites li:hover .menu-photovoltaiques{
     width:300px;
-    height:100px;  
+    
 }
 .menu-presentation{
     position:absolute;
@@ -109,7 +107,7 @@ li{
 .menu-photovoltaiques{
     position:absolute;
     top:0px;
-    left:180px;
+    left:220px;
     z-index:99;
     
 }
@@ -118,18 +116,9 @@ li{
     top:50px;
     left:870px;
     z-index:99;
-  
 }
-.submenu-photovoltaique{
-    padding-bottom: 15px;
-}
-li.menu-dropdown,li .submenu-item{
-    display:block;
-}
-li .menu-dropdown:hover, li .submenu-item:hover{
-    background-color: #f9c12e;
-    color:#3f4f59;
-}
+
+
 
 /*pour avoir le soulignement sous les sous-menu*/
  /* li .menu-dropdown::after,li .menu-photovoltaiques::after{
@@ -158,6 +147,13 @@ li .menu-dropdown:hover, li .submenu-item:hover{
     position:absolute;
     top:100px;
     left:250px;
+}
+li .menu-dropdown,li .submenu-item,li .menu-activite-dropdown, li .menu-admin-dropdown{
+    display: block;
+} 
+li .menu-dropdown:hover ,li .submenu-item:hover ,li .menu-activite-dropdown:hover , li .menu-admin-dropdown:hover{
+    background-color: #f9c12e;
+    color:#3f4f59;
 }
 /* FIN HEADER*/
 /*BODY DE L'ACCUEIL*/
@@ -216,6 +212,66 @@ li .menu-dropdown:hover, li .submenu-item:hover{
 }*/
  
 /*FIN PRESENTATION/ QUI SOMMES-NOUS*/
+
+/*ONGLET CONSEIL D'ADMINISTRATION*/
+
+    /*ENTITY ACTIONNTAIRE*/
+    .btn-save, .btn-update{
+        border-radius: 5px;
+        font-size:1em;
+        padding:5px;
+        background: #ef8031;
+        border:none;
+        color:white;
+        font-weight: bold;
+    }
+    .btn-save:hover,.btn-update:hover{
+        color:#3f4f59;
+        background-color: #f9c12e;
+    }
+    .btn-back,.btn-delete{
+        border-radius: 5px;
+        font-size:1em;
+        padding:5px;
+        background:#f9c12e;
+        border:none;
+        color:#3f4f59;
+        font-weight: bold;
+        margin-left: 30px;
+        margin-bottom:50px;
+    }
+    
+    .actionnaire{
+        border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+        border-image-slice:5;
+    }
+    .btn-create{
+       color:#ef8031!important;
+       font-weight: bold !important;  
+    }
+    .btn-update{
+        position:absolute;
+        left:720px;
+    }
+    .btn-delete{
+        position:absolute;
+        left:1000px;
+        top:430px;
+        
+    }
+   .btn-back{
+    position: relative;
+    left:300px;
+   }
+   
+    .btn-back:hover,.btn-delete:hover{
+        color:#fff;
+        background-color:#ef8031;
+    }
+    
+
+    /* FIN ENTITY ACTIONNAIRE*/
+/* FIN ONGLET D'ADMINISTRATION*/
 
 /*les actualités (les 2 actualités dans la page d'accueil*/
 
@@ -318,19 +374,51 @@ color:#3f4f59;
 }
 
 /*FIN ACTUALITES*/
+/*ACTIVITE*/
+  /*ONGLET CARTE*/
+    .carte-titre,.carte-detail{
+        text-align: center;
+    }
+    .carte-titre{
+        margin: 100px 0px;
+        
+    }
+    .carte-detail{
+        margin:100px 0px;
+    }
 
-
+    .carte-trait{
+        position:absolute;
+        left:625px;
+        border-top:2px solid black;
+        border-image:linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#fcd726,#feed17);
+        border-image-slice:5;
+        width:230px;
+        height: 120px; 
+    }
+  /*FIN ONGLET CARTE*/
+/*FIN ACTIVITE*/
 /*CONTACT*/
 .titre-contact{
     text-align:start;
     margin: 30px 0 15px 0;
 }
-.titre-contact,.coordonnées,.trait-adresse,.trait-contact{
+ .coordonnées,.titre-coordonnées,.trait-adresse{
     position: relative;
     top:0px;
     left:200px;
+} 
+.contact-titre, .trait-contact{
+    position:relative;
+    left:280px;
 }
-.horaires, .titre-coordonnées,.titre-contact{
+
+.contact-adresse{
+display:flex;
+flex-direction: column;
+
+}
+.horaires, .titre-coordonnées,.contact-titre{
     font-size:1.1em;
     font-weight: 600;
     color:var(--text-color);
@@ -379,7 +467,7 @@ span{
 .carte{
     max-width:400px;
     position:relative;
-    left:400px;
+    left:500px;
     top:0px;
     filter:brightness(90%);
    
@@ -455,29 +543,24 @@ span{
     background: linear-gradient(to right, #ef8031,#f49634,#f9ae2f,#f9c12e,#fcd726,#feed17);
     background-repeat: no-repeat;
     background-size: cover;
-}
-.footer{
-    font-size:1.2em;
-    display:flex;
-    justify-content: space-between;
-    padding: 10px;
-    font-family: 'Poppins';
-    color:var(--text-color);
     width:100%;
+    color:var(--text-color);
+    font-size:20px;
 }
+
 .adresse{
-    text-align:left;
+    display:flex;
+    justify-content: center;
    font-weight: bold;
+   padding-top: 20px;;
 }
 .legalite{
     display:flex;
-    justify-content: center;
-    padding-top:150px;
-   
+    justify-content: center;   
 }
 .phone{
     display:flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 .icon-phone{
     max-width: 25px;
@@ -485,10 +568,11 @@ span{
 .number{
     margin-left:5px;
 }
-.mention,.condition,.accessibilite
-{
-    margin-right:25px;
+.reseau-social{
+    position:relative;
+    top:-10px;
 }
+
 .mention a, .condition a, .accessibilite a, .mail a{
     text-decoration: underline;
 }
@@ -497,7 +581,8 @@ span{
 }
 .trait-union
 {
-    margin-right:15px;
+    margin:0 15px;
+    
 }
 .icon-lkd{
    display: flex;
